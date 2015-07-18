@@ -13,7 +13,7 @@ module FFMPEG
     # prerequisites of the given array of compilation flags for FFMPEG. Package
     # names returned are determined by the platform running this recipe.
     def find_prerequisite_packages_by_flags(compile_flags)
-      packages = []
+      packages = ['pkg-config']
       compile_flags.each do |flag|
         packages = packages |= packages_for_flag(flag)
       end
@@ -79,8 +79,13 @@ module FFMPEG
         )
       when '--enable-librtmp'
         value_for_platform(
-          ['ubuntu'] => { 'default' => ['pkg-config', 'librtmp-dev'] },
+          ['ubuntu'] => { 'default' => ['librtmp-dev'] },
           'default' => ['librtmp-dev']
+        )
+      when '--enable-libx11grab'
+        value_for_platform(
+          ['ubuntu'] => { 'default' => ['libxext-dev', 'libxfixes-dev'] },
+          'default' => ['libxext-dev', 'libxfixes-dev']
         )
       else
         []
