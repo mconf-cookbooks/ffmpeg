@@ -82,7 +82,7 @@ module FFMPEG
           ['ubuntu'] => { 'default' => ['librtmp-dev'] },
           'default' => ['librtmp-dev']
         )
-      when '--enable-libx11grab'
+      when '--enable-x11grab'
         value_for_platform(
           ['ubuntu'] => { 'default' => ['libxext-dev', 'libxfixes-dev'] },
           'default' => ['libxext-dev', 'libxfixes-dev']
