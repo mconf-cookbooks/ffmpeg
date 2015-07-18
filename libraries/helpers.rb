@@ -77,6 +77,11 @@ module FFMPEG
           ['ubuntu'] => { 'default' => ['libx264-dev'] },
           'default' => ['libx264-dev']
         )
+      when '--enable-librtmp'
+        value_for_platform(
+          ['ubuntu'] => { 'default' => ['pkg-config', 'librtmp-dev'] },
+          'default' => ['librtmp-dev']
+        )
       else
         []
       end
