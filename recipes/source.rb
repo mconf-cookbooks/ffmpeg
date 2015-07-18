@@ -39,6 +39,7 @@ end
 git "#{Chef::Config[:file_cache_path]}/ffmpeg" do
   repository node['ffmpeg']['git_repository']
   reference node['ffmpeg']['git_revision']
+  timeout node['ffmpeg']['git_timeout']
   action :sync
   notifies :delete, "file[#{creates_ffmpeg}]", :immediately
 end
