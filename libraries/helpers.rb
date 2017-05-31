@@ -87,6 +87,36 @@ module FFMPEG
           ['ubuntu'] => { 'default' => ['libxext-dev', 'libxfixes-dev'] },
           'default' => ['libxext-dev', 'libxfixes-dev']
         )
+      when '--enable-libmp3lame'
+          value_for_platform(
+            ['ubuntu'] => { 'default' => ['libmp3lame-dev'] },
+            'default' => ['libmp3lame-dev']
+          )
+      when '--enable-libopus'
+          value_for_platform(
+            ['ubuntu'] => { 'default' => ['libopus-dev'] },
+            'default' => ['libopus-dev']
+          )
+      when '--enable-libspeex'
+          value_for_platform(
+            ['ubuntu'] => { 'default' => ['libspeex-dev'] },
+            'default' => ['libspeex-dev']
+          )
+      when '--enable-libwebp'
+          value_for_platform(
+            ['ubuntu'] => { 'default' => ['libwebp-dev'] },
+            'default' => ['libwebp-dev']
+          )
+      when '--enable-libfreetype'
+          value_for_platform(
+            ['ubuntu'] => { 'default' => ['libfreetype6-dev'] },
+            'default' => ['libfreetype6-dev']
+          )
+      when '--enable-libxcb'
+          value_for_platform(
+            ['ubuntu'] => { 'default' => ['libxcb1-dev'] },
+            'default' => ['libxcb1-dev']
+          )
       else
         []
       end
